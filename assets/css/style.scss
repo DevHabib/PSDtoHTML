@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto ';
+  src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Metal Mania';
+  src: url("../fonts/Metal-Mania/metal-maniaRegular.ttf");
+}
+
+img {
+  width: 100%;
+}
+
+$width1: 480px;
+$height1: 390px;
+$height2: 780px;
+
+.width1 {
+  width: $width1;
+}
+
+.height1 {
+  height: $height1;
+}
+
+.height2 {
+  height: $height2
+}
+
+.works-overlay {
+  display: none;
+}
+
+.work-img img {
+  height: 100%;
+  object-fit: cover;
+}

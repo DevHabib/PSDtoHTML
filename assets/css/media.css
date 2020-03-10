@@ -1,0 +1,59 @@
+/* XL Device :1200px. 1170 */
+@media screen and (max-width: 768px) {}
+
+/* LG Device :992px. 970px */
+@media (min-width: 992px) and (max-width: 1200px) {}
+
+
+/* MD Device :768px. 750px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-nav li a {
+    padding: 0 !important;
+  }
+
+  .form-content {
+    margin-top: 20px;
+  }
+}
+
+
+/* Mobile Layout: 320px. 300px */
+@media only screen and (max-width: 767px) {
+  .navbar-nav li a {
+    padding: 0 !important;
+  }
+
+  #home {
+    height: 80vh;
+  }
+
+  .home-content h1 {
+    font-size: 18px;
+  }
+
+  .home-content h2 {
+    font-size: 30px;
+  }
+
+  p,
+  a {
+    font-size: 14px !important;
+  }
+
+  .hr-card {
+    display: block;
+    text-align: center;
+  }
+
+  .form-content {
+    margin-top: 20px;
+  }
+
+  .footer-social {
+    display: none !important;
+  }
+}
+
+
+/* Wide Mobile Layout: 480px. 450px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
