@@ -5,45 +5,161 @@
 }
 
 @font-face {
-  font-family: 'Roboto ';
-  src: url("../fonts/Lato/Lato-Regular.ttf");
+  font-family: 'Kaushan Script';
+  src: url("../fonts/Kaushan_Script/KaushanScript-Regular.ttf");
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url("../fonts/Lato/Lato-Bold.ttf");
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+  font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Metal Mania';
-  src: url("../fonts/Metal-Mania/metal-maniaRegular.ttf");
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto/Roboto-LightItalic.ttf");
+  font-weight: 300;
+}
+
+$color-tomato: #f38181;
+$color-yellow: #fce38a;
+$color-offWhite: #eaffd0;
+$color-skyblue: #95e1d3;
+$color-white: #fff;
+$text-primary: #333;
+$text-secondary: #999;
+
+%kaushan {
+  font-family: "Kaushan Script";
+}
+
+%montserrat-bold {
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+
+%montserrat-regular {
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+%roboto-italic {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-style: italic;
+}
+
+%roboto-regular {
+  font-family: "Roboto";
+  font-weight: 400;
 }
 
 img {
   width: 100%;
 }
 
-$width1: 480px;
-$height1: 390px;
-$height2: 780px;
+.section-heading {
+  margin: 0 auto;
+  display: table;
+  position: relative;
+  text-align: center;
+  padding-bottom: 40px;
 
-.width1 {
-  width: $width1;
+  &:before {
+    position: absolute;
+    content: '';
+    background-color: $color-tomato;
+    width: 60px;
+    height: 3px;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-sub {
+    @extend %kaushan;
+    color: $text-primary;
+    font-size: 24pt;
+  }
+
+  &-main {
+    @extend %montserrat-bold;
+    color: $text-primary;
+    font-size: 30pt;
+    text-transform: uppercase;
+  }
 }
 
-.height1 {
-  height: $height1;
+.section-paragraph {
+  text-align: center;
+
+  p {
+    @extend %roboto-regular;
+    color: $text-secondary;
+  }
 }
 
-.height2 {
-  height: $height2
+/* home */
+.home {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 150px 0;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(243, 129, 129);
+    background: linear-gradient(180deg, rgba(243, 129, 129, 1) 0%, rgba(252, 227, 138, 1) 96%);
+    opacity: 0.8;
+  }
+
+  .home-content {
+    color: $color-white;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: #fff;
+      width: 60px;
+      height: 3px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .sub-heading {
+      font-size: 72pt;
+      @extend %kaushan;
+    }
+
+    .main-heading {
+      font-size: 150pt;
+      @extend %montserrat-bold;
+      text-transform: uppercase;
+    }
+  }
 }
 
-.works-overlay {
-  display: none;
-}
-
-.work-img img {
-  height: 100%;
-  object-fit: cover;
-}
+/* home ends */
