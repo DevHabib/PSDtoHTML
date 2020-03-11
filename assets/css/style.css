@@ -39,7 +39,7 @@
   font-family: "Kaushan Script";
 }
 
-header nav .navbar-brand, header nav .navbar-nav .nav-item .nav-link, .home .home-content, .home .home-btn .btn-mogo, .about .about-img .about-img-hover i, .about .about-img .about-img-hover p, .counter-area .counter, .counter-area .counter-text {
+header nav .navbar-brand, header nav .navbar-nav .nav-item .nav-link, .home .home-content, .home .home-btn .btn-mogo, .about .about-img .about-img-hover i, .about .about-img .about-img-hover p, .counter-area .counter, .counter-area .counter-text, .team-member-overlay ul li a:hover i {
   color: #fff;
 }
 
@@ -88,7 +88,7 @@ header nav .navbar-nav .nav-item .nav-link:before, .home:before, .about .about-i
   opacity: 0.8;
 }
 
-header, header nav .navbar-nav .nav-item .nav-link, header nav .navbar-nav .nav-item .nav-link:before, .sticky, .about .about-img, .about .about-img .about-img-hover, .team-member {
+header, header nav .navbar-nav .nav-item .nav-link, header nav .navbar-nav .nav-item .nav-link:before, .sticky, .about .about-img, .about .about-img .about-img-hover, .team-member, .team-member-overlay, .team-member-overlay ul li a i {
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -477,7 +477,17 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
+}
+
+.team-member:hover {
+  -webkit-box-shadow: 10px 10px 0 #95e1d3;
+          box-shadow: 10px 10px 0 #95e1d3;
+}
+
+.team-member:hover .team-member-overlay {
+  visibility: visible;
+  opacity: 1;
 }
 
 .team-member img {
@@ -490,6 +500,11 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
 .team-member img:first-child {
   -o-object-position: left;
      object-position: left;
+}
+
+.team-member-overlay {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .team-member-overlay:before {
@@ -521,6 +536,10 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
   height: 25px;
   text-align: center;
   line-height: 25px;
+}
+
+.team-member-overlay ul li a:hover i {
+  background-color: #f38181;
 }
 
 .team-member-overlay ul li a i {
