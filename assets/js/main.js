@@ -10,13 +10,24 @@ jQuery(document).ready(function ($) {
   // Jquery clickable functions starts
   jQuery(document).ready(function ($) {
     $(".counter").counterUp({});
-    $('.grid').isotope({
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      masonry: {
-        columnWidth: '.grid-sizer'
-      }
-    });
+
+
+    $('.testimonial-item').owlCarousel({
+      margin: 0,
+      loop: true,
+      autoWidth: false,
+      items: 1,
+      nav: true,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"]
+    })
+    $('.quote-carousel').owlCarousel({
+      margin: 0,
+      loop: true,
+      autoWidth: false,
+      items: 1,
+      nav: true,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"]
+    })
   });
 
 
