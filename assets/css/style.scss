@@ -176,6 +176,14 @@ $text-secondary: #999;
   }
 }
 
+.normal-img-height {
+  height: 390px;
+}
+
+.double-img-height {
+  height: 780px;
+}
+
 /*carousel ends*/
 img {
   width: 100%;
@@ -721,6 +729,20 @@ header {
 }
 
 /*team end*/
+
+/* masonary */
+.masonary-container {
+  width: 100%;
+
+  .masonary-img {
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 /*sponsor start*/
 .sponsors {
   background-color: #f8f8f8;

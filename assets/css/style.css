@@ -184,6 +184,14 @@ header, header nav .navbar-nav .nav-item .search-content .search-btn, header nav
   right: -5%;
 }
 
+.normal-img-height {
+  height: 390px;
+}
+
+.double-img-height {
+  height: 780px;
+}
+
 /*carousel ends*/
 img {
   width: 100%;
@@ -682,6 +690,17 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
 }
 
 /*team end*/
+/* masonary */
+.masonary-container {
+  width: 100%;
+}
+
+.masonary-container .masonary-img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /*sponsor start*/
 .sponsors {
   background-color: #f8f8f8;
