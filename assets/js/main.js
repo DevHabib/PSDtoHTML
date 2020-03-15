@@ -12,12 +12,13 @@ jQuery(document).ready(function ($) {
     $(".counter").counterUp({});
 
 
-    $('.testimonial-item').owlCarousel({
+    $('.testimonial').owlCarousel({
       margin: 0,
       loop: true,
       autoWidth: false,
       items: 1,
       nav: true,
+      dots: false,
       navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"]
     })
     $('.quote-carousel').owlCarousel({

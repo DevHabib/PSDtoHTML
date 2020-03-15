@@ -54,7 +54,7 @@ button {
   font-family: "Kaushan Script";
 }
 
-header nav .navbar-brand, header nav .navbar-nav .nav-item .search-content .search-btn, header nav .navbar-nav .nav-item .nav-link, .home .home-content, .home .home-btn .btn-mogo, .about .about-img .about-img-hover i, .about .about-img .about-img-hover p, .counter-area .counter, .counter-area .counter-text, .team-member-overlay ul li a:hover i, .blog .single-blog-content .blog-date, footer .footer-subscribe .btn-mogo {
+header nav .navbar-brand, header nav .navbar-nav .nav-item .search-content .search-btn, header nav .navbar-nav .nav-item .nav-link, .home .home-content, .home .home-btn .btn-mogo, .about .about-img .about-img-hover i, .about .about-img .about-img-hover p, .counter-area .counter, .counter-area .counter-text, .team-member-overlay ul li a:hover i, .masonary-container .masonary-content .masonary-overlay, .blog .single-blog-content .blog-date, footer .footer-subscribe .btn-mogo {
   color: #fff;
 }
 
@@ -63,7 +63,7 @@ header nav .navbar-brand, header nav .navbar-nav .nav-item .search-content .sear
   font-weight: 700;
 }
 
-header nav .navbar-nav .nav-item .nav-link, .counter-area .counter-text, .service-1 .services-1-details-title, .service-2 .card-header .service-item-left span, .team-details-name, .clients .single-client .client-details .client-name, .blog .single-blog .blog-content-top .blog-title, footer .footer-item .footer-follower, footer .footer-title h4, footer .footer-content .footer-single-blog .footer-blog-content .footer-blog-post, footer .copyright p {
+header nav .navbar-nav .nav-item .nav-link, .counter-area .counter-text, .service-1 .services-1-details-title, .service-2 .card-header .service-item-left span, .team-details-name, .masonary-container .masonary-content .masonary-overlay h5, .clients .single-client .client-details .client-name, .blog .single-blog .blog-content-top .blog-title, footer .footer-item .footer-follower, footer .footer-title h4, footer .footer-content .footer-single-blog .footer-blog-content .footer-blog-post, footer .copyright p {
   font-family: "Montserrat";
   font-weight: 400;
 }
@@ -103,13 +103,13 @@ header nav .navbar-nav .nav-item .nav-link, .counter-area .counter-text, .servic
   margin: 40px auto;
 }
 
-header nav .navbar-nav .nav-item .nav-link:before, .home:before, .about .about-img .about-img-hover :after, .features:before, .team-member-overlay:before, .clients:before, .map:before {
+header nav .navbar-nav .nav-item .nav-link:before, .home:before, .about .about-img .about-img-hover :after, .features:before, .team-member-overlay:before, .masonary-container .masonary-content .masonary-overlay:before, .clients:before, .map:before {
   position: absolute;
   content: '';
   width: 100%;
 }
 
-.about .about-img .about-img-hover :after, .home:before, .team-member-overlay:before {
+.about .about-img .about-img-hover :after, .home:before, .team-member-overlay:before, .masonary-container .masonary-content .masonary-overlay:before {
   background: #f38181;
   background: -webkit-gradient(linear, left top, left bottom, from(#f38181), color-stop(96%, #fce38a));
   background: linear-gradient(180deg, #f38181 0%, #fce38a 96%);
@@ -121,7 +121,7 @@ header nav .navbar-nav .nav-item .nav-link:before, .home:before, .about .about-i
   opacity: 0.8;
 }
 
-header, header nav .navbar-nav .nav-item .search-content .search-btn, header nav .navbar-nav .nav-item .nav-link, header nav .navbar-nav .nav-item .nav-link:before, .sticky, .about .about-img, .about .about-img .about-img-hover, .team-member, .team-member-overlay, .team-member-overlay ul li a i {
+.rotate, header, header nav .navbar-nav .nav-item .search-content .search-btn, header nav .navbar-nav .nav-item .nav-link, header nav .navbar-nav .nav-item .nav-link:before, .sticky, .about .about-img, .about .about-img .about-img-hover, .service-2 .card-header .service-item-right i, .team-member, .team-member-overlay, .team-member-overlay ul li a i, .masonary-container .masonary-content .masonary-overlay {
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -155,6 +155,20 @@ header, header nav .navbar-nav .nav-item .search-content .search-btn, header nav
 .quote .quote-content .quote-sign .single-line, .testimonial-item .quote-content .quote-sign .single-line {
   background-color: #f38181;
   margin: 0;
+}
+
+.rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.md--none {
+  display: none;
+}
+
+.collapsed .rotate {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 /*carousel*/
@@ -547,6 +561,10 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
   cursor: pointer;
 }
 
+.service-2 .card-header .service-item {
+  padding: 0 10px;
+}
+
 .service-2 .card-header .service-item-left img {
   width: 30px;
   margin: 0 15px;
@@ -560,9 +578,27 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
   text-transform: uppercase;
 }
 
+.service-2 .card-header .service-item-right i {
+  color: #999;
+}
+
 .service-2 .card-body {
   max-height: 195px;
   overflow-y: scroll;
+}
+
+.service-2 .card-body::-webkit-scrollbar-track {
+  background-color: #e5e5e5;
+}
+
+.service-2 .card-body::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+.service-2 .card-body::-webkit-scrollbar-thumb {
+  background-color: #95e1d3;
+  border-radius: 20px;
 }
 
 .service-2 .card-body P {
@@ -608,11 +644,6 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
 .team-member:hover .team-member-overlay {
   visibility: visible;
   opacity: 1;
-}
-
-.team-member:first-child .team-image img {
-  -o-object-position: left;
-     object-position: left;
 }
 
 .team-member .team-image img {
@@ -695,10 +726,66 @@ header nav .navbar-nav .nav-item .nav-link:hover::before {
   width: 100%;
 }
 
-.masonary-container .masonary-img img {
+.masonary-container .masonary-content {
+  position: relative;
+}
+
+.masonary-container .masonary-content:hover .masonary-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.masonary-container .masonary-content .masonary-img {
+  position: relative;
+}
+
+.masonary-container .masonary-content .masonary-img img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.masonary-container .masonary-content .masonary-overlay {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  line-height: 20px;
+}
+
+.masonary-container .masonary-content .masonary-overlay h5 {
+  text-transform: uppercase;
+  font-size: 14pt;
+  margin: 20px 0;
+}
+
+.masonary-container .masonary-content .masonary-overlay:before {
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.masonary-container .masonary-content .masonary-overlay img {
+  width: 30px;
+  height: 30px;
 }
 
 /*sponsor start*/

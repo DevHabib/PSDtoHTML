@@ -150,6 +150,17 @@ $text-secondary: #999;
   }
 }
 
+.rotate {
+  transform: rotate(180deg);
+  @extend %transition;
+}
+
+.collapsed {
+  .rotate {
+    transform: rotate(0deg);
+  }
+}
+
 /*carousel*/
 .owl-nav {
   width: 100%;
@@ -558,6 +569,7 @@ header {
 
 /* Service-2 starts */
 .service-2 {
+
   .card-header {
     background-color: $color-white;
     padding: 0;
@@ -566,6 +578,10 @@ header {
     cursor: pointer;
 
     .service-item {
+      padding: 0 10px;
+
+
+
       &-left {
         img {
           width: 30px;
@@ -580,12 +596,33 @@ header {
           text-transform: uppercase;
         }
       }
+
+      &-right {
+        i {
+          color: $text-secondary;
+          @extend %transition;
+        }
+      }
     }
   }
 
   .card-body {
     max-height: 195px;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar-track {
+      background-color: #e5e5e5;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-skyblue;
+      border-radius: 20px;
+    }
 
     P {
       @extend %roboto-italic;
@@ -635,14 +672,6 @@ header {
       .team-member-overlay {
         visibility: visible;
         opacity: 1;
-      }
-    }
-
-    &:first-child {
-      .team-image {
-        img {
-          object-position: left;
-        }
       }
     }
 
@@ -734,11 +763,62 @@ header {
 .masonary-container {
   width: 100%;
 
-  .masonary-img {
+  .masonary-content {
+    position: relative;
 
-    img {
+    &:hover {
+      .masonary-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .masonary-img {
+      position: relative;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .masonary-overlay {
+      position: absolute;
+      display: flex;
+      flex-flow: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
       height: 100%;
-      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      @extend %transition;
+      @extend %color-white;
+      line-height: 20px;
+
+      h5 {
+        text-transform: uppercase;
+        @extend %montserrat-regular;
+        font-size: 14pt;
+        margin: 20px 0;
+      }
+
+      &:before {
+        @extend %linear-gradient;
+        @extend %absolute;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.9;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }
