@@ -4,6 +4,32 @@
   box-sizing: border-box;
 }
 
+@supports (-ms-accelerator:true) {
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    overflow: auto;
+    height: 100%;
+  }
+}
+
+/*Ie 10/11*/
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    overflow: auto;
+    height: 100%;
+  }
+}
+
 html,
 body {
   scroll-behavior: smooth;
@@ -153,6 +179,10 @@ $text-secondary: #999;
 .rotate {
   transform: rotate(180deg);
   @extend %transition;
+}
+
+.swipper-container {
+  width: 600px;
 }
 
 .collapsed {
