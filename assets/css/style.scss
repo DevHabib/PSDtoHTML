@@ -59,6 +59,12 @@ button {
 
 @font-face {
   font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Montserrat';
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
   font-weight: 400;
 }
@@ -94,6 +100,11 @@ $text-secondary: #999;
 %montserrat-bold {
   font-family: "Montserrat";
   font-weight: 700;
+}
+
+%montserrat-extraBold {
+  font-family: "Montserrat";
+  font-weight: 800;
 }
 
 %montserrat-regular {
@@ -140,13 +151,23 @@ $text-secondary: #999;
   transition: .3s;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: $text-secondary;
+
+  &:after {
+    font-size: 24px;
+  }
+}
+
 %quote {
   .quote-content {
     .quote-message {
       @extend %roboto-italic;
       color: $text-secondary;
-      font-size: 27px;
+      font-size: 21px;
       line-height: 1.5;
+      margin-bottom: 20px;
     }
 
 
@@ -161,9 +182,9 @@ $text-secondary: #999;
 
       .quote-by {
         @extend %kaushan;
-        margin: 10px 0;
+        margin: 14px 0;
         padding: 0 10px;
-        font-size: 24pt;
+        font-size: 24px;
         line-height: 10px;
       }
 
@@ -181,9 +202,17 @@ $text-secondary: #999;
   @extend %transition;
 }
 
-.swipper-container {
-  width: 600px;
+.accordion {
+  .card {
+    border-radius: 0;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #ddd;
+      border-radius: 0;
+    }
+  }
 }
+
 
 .collapsed {
   .rotate {
@@ -201,7 +230,7 @@ $text-secondary: #999;
     outline: none;
 
     i {
-      font-size: 23pt;
+      font-size: 23px;
       color: $text-secondary;
     }
   }
@@ -230,25 +259,34 @@ img {
   width: 100%;
 }
 
+.sticky {
+  background: $color-tomato;
+  position: fixed;
+  top: 0;
+  @extend %transition;
+}
+
 header {
   @extend %transition;
   position: fixed;
   top: 10px;
   left: 0;
   width: 100%;
-  height: auto;
   z-index: 9999;
 
-  nav {
+  .navbar {
+    padding: 0;
+
     .navbar-brand {
-      font-size: 30pt;
+      font-size: 2em;
+
       @extend %color-white;
       @extend %montserrat-bold;
     }
 
     .navbar-nav {
       .nav-item {
-        margin: 0 15px;
+        margin: 0 20px;
 
         .search-content {
           display: flex;
@@ -257,7 +295,7 @@ header {
           input {
             border-radius: 0;
             height: 40px;
-            font-size: 14pt;
+            font-size: 14px;
             border: 1px solid #e5e5e5;
             padding: 0 10px;
 
@@ -290,7 +328,7 @@ header {
         .nav-link {
           @extend %montserrat-regular;
           @extend %color-white;
-          font-size: 14pt;
+          font-size: 0.875em;
           text-transform: uppercase;
           position: relative;
           padding: 15px 0;
@@ -298,7 +336,7 @@ header {
           overflow: hidden;
 
           img {
-            width: 25px;
+            width: 20px;
           }
 
           &:before {
@@ -325,19 +363,12 @@ header {
   }
 }
 
-.sticky {
-  background: $color-tomato;
-  position: fixed;
-  top: 0;
-  @extend %transition;
-}
 
 .section-heading {
   margin: 0 auto;
   display: table;
   position: relative;
   text-align: center;
-  padding-bottom: 40px;
 
   .single-line {
     background-color: $color-tomato;
@@ -347,13 +378,13 @@ header {
   &-sub {
     @extend %kaushan;
     color: $text-primary;
-    font-size: 24pt;
+    font-size: 1.5em;
   }
 
   &-main {
     @extend %montserrat-bold;
     color: $text-primary;
-    font-size: 30pt;
+    font-size: 1.875em;
     text-transform: uppercase;
   }
 }
@@ -375,7 +406,10 @@ header {
   background-position: center;
   position: relative;
   z-index: 1;
-  padding: 150px 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 100vh;
 
   &:before {
     @extend %absolute;
@@ -389,7 +423,6 @@ header {
 
   .home-content {
     @extend %color-white;
-    text-align: center;
     position: relative;
 
     .single-line {
@@ -399,14 +432,15 @@ header {
     }
 
     .sub-heading {
-      font-size: 72pt;
+      font-size: 4em;
       @extend %kaushan;
     }
 
     .main-heading {
-      font-size: 150pt;
-      @extend %montserrat-bold;
+      font-size: 9rem;
+      @extend %montserrat-extraBold;
       text-transform: uppercase;
+      letter-spacing: 0;
     }
   }
 
@@ -416,9 +450,9 @@ header {
 
     .btn-mogo {
       line-height: 40px;
-      padding: 5px 40px;
+      padding: 0 40px;
       border: 3px solid $color-white;
-      font-size: 14pt;
+      font-size: 0.875em;
       border-radius: 0;
       @extend %montserrat-bold;
       @extend %color-white;
@@ -431,60 +465,64 @@ header {
 
 /* about starts */
 .about {
-  .about-img {
-    position: relative;
-    @extend %transition;
-    width: 100%;
-    height: 100%;
+  padding: 5em 0;
 
-    &:hover {
-      box-shadow: 10px 10px 0 $color-skyblue;
-
-      .about-img-hover {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    .about-img-hover {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      top: 0;
-      z-index: 1;
+  .about-content {
+    .about-img {
+      position: relative;
+      @extend %transition;
       width: 100%;
       height: 100%;
-      z-index: 1;
-      @extend %transition;
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
 
-      i {
-        @extend %color-white;
-        font-size: 18pt;
+      &:hover {
+        box-shadow: 10px 10px 0 $color-skyblue;
+
+        .about-img-hover {
+          opacity: 1;
+          visibility: visible;
+        }
       }
 
-      p {
-        font-size: 18pt;
-        @extend %color-white;
-        text-transform: uppercase;
-        @extend %montserrat-bold;
-      }
-
-      :after {
+      .about-img-hover {
+        opacity: 0;
+        visibility: hidden;
         position: absolute;
-        @extend %absolute;
-        @extend %hover-item;
         top: 0;
-        left: 0;
-        z-index: -1;
-      }
-    }
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        @extend %transition;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
 
-    img {
-      display: block;
+        i {
+          @extend %color-white;
+          font-size: 1.125em;
+        }
+
+        p {
+          font-size: 1.125em;
+          @extend %color-white;
+          text-transform: uppercase;
+          @extend %montserrat-bold;
+        }
+
+        :after {
+          position: absolute;
+          @extend %absolute;
+          @extend %hover-item;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+      }
+
+      img {
+        display: block;
+      }
     }
   }
 }
@@ -496,24 +534,35 @@ header {
   background-color: $color-skyblue;
   text-align: center;
 
-  .counter {
-    @extend %montserrat-bold;
-    font-size: 72pt;
-    @extend %color-white;
+  .counter-content-last {
+    border-right: 1px solid $color-white;
   }
 
-  .counter-text {
-    font-size: 14pt;
-    @extend %color-white;
-    text-transform: uppercase;
-    @extend %montserrat-regular;
+  .counter-content {
+    border-left: 1px solid $color-white;
+    padding: 2rem 0;
+
+    .counter {
+      @extend %montserrat-bold;
+      font-size: 4.5em;
+      @extend %color-white;
+      margin-bottom: 0;
+    }
+
+    .counter-text {
+      font-size: 0.875em;
+      @extend %color-white;
+      text-transform: uppercase;
+      @extend %montserrat-regular;
+      margin-bottom: 0;
+    }
   }
 }
 
 /* Counter Ends */
 /* Service-1 Starts */
 .service-1 {
-
+  padding: 5em 0;
 
   .services-1 {
     &-content {
@@ -542,12 +591,13 @@ header {
       &-title {
         text-transform: uppercase;
         @extend %montserrat-regular;
-        color: $text-primary;
-        font-size: 14pt;
+        color: #333;
+        font-size: 0.875em;
       }
     }
   }
 }
+
 
 /* Service-1 Ends */
 
@@ -569,11 +619,14 @@ header {
     height: 100%;
   }
 
+  .section-heading {
+    padding-top: 5rem;
+  }
+
   .feature-mobile {
 
-
     .big-screen {
-      width: 350px;
+      width: 475px;
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -582,14 +635,12 @@ header {
       margin: 0 auto;
 
       .small-screen {
+        width: 260px;
+        position: absolute;
 
-        img {
-          position: absolute;
-          width: 200px;
-          top: 50%;
-          left: 50%;
-          transform: translate(48%, -22%);
-        }
+        top: 50%;
+        left: 50%;
+        transform: translate(48%, -23%);
       }
     }
   }
@@ -599,46 +650,61 @@ header {
 
 /* Service-2 starts */
 .service-2 {
+  .services-2-img {
+    height: 350px;
 
-  .card-header {
-    background-color: $color-white;
-    padding: 0;
-    height: 55px;
-    line-height: 55px;
-    cursor: pointer;
+    img {
+      height: 100%;
+    }
+  }
 
-    .service-item {
-      padding: 0 10px;
+  &-card {
+    margin-bottom: 10px;
+
+    .card-header {
+      background-color: $color-white;
+      padding: 0;
+      height: 55px;
+      line-height: 55px;
+      cursor: pointer;
+
+      .service-item {
+        padding: 0 10px;
 
 
 
-      &-left {
-        img {
-          width: 30px;
-          margin: 0 15px;
-          object-fit: contain;
+        &-left {
+          align-items: center;
+
+          img {
+            width: 25px;
+            height: 25px;
+            margin: 0 15px;
+            object-fit: contain;
+          }
+
+          span {
+            @extend %montserrat-regular;
+            color: $text-primary;
+            font-size: .875em;
+            text-transform: uppercase;
+          }
         }
 
-        span {
-          @extend %montserrat-regular;
-          color: $text-primary;
-          font-size: 14pt;
-          text-transform: uppercase;
-        }
-      }
-
-      &-right {
-        i {
-          color: $text-secondary;
-          @extend %transition;
+        &-right {
+          i {
+            color: $text-secondary;
+            @extend %transition;
+          }
         }
       }
     }
   }
 
   .card-body {
-    max-height: 195px;
+    max-height: 160px;
     overflow-y: scroll;
+    padding: 0;
 
     &::-webkit-scrollbar-track {
       background-color: #e5e5e5;
@@ -654,11 +720,18 @@ header {
       border-radius: 20px;
     }
 
-    P {
-      @extend %roboto-italic;
-      color: $text-secondary;
-      font-size: 15pt;
+    .service-card-content {
+      padding: 15px 15px 0;
+
+      P {
+        @extend %roboto-italic;
+        color: $text-secondary;
+        font-size: 0.875em;
+        line-height: 1.5em;
+      }
     }
+
+
   }
 }
 
@@ -674,7 +747,7 @@ header {
       border: 3px solid $color-skyblue;
       text-align: center;
       line-height: 145px;
-      margin-right: 30px;
+      margin-right: 40px;
 
       img {
         width: 65px;
@@ -775,7 +848,7 @@ header {
     &-name {
       @extend %montserrat-regular;
       text-transform: uppercase;
-      font-size: 14pt;
+      font-size: 14px;
       color: $text-primary;
     }
 
@@ -814,11 +887,6 @@ header {
 
     .masonary-overlay {
       position: absolute;
-      display: flex;
-      flex-flow: column;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
       width: 100%;
       height: 100%;
       top: 0;
@@ -830,13 +898,6 @@ header {
       @extend %color-white;
       line-height: 20px;
 
-      h5 {
-        text-transform: uppercase;
-        @extend %montserrat-regular;
-        font-size: 14pt;
-        margin: 20px 0;
-      }
-
       &:before {
         @extend %linear-gradient;
         @extend %absolute;
@@ -845,9 +906,26 @@ header {
         opacity: 0.9;
       }
 
-      img {
-        width: 30px;
-        height: 30px;
+      .masonary-center {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        h5 {
+          text-transform: uppercase;
+          @extend %montserrat-regular;
+          font-size: 14px;
+          margin: 20px 0;
+        }
+
+
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
   }
@@ -869,21 +947,28 @@ header {
 
 .testimonial {
   position: relative;
+  padding: 5em 0;
 
-  &-item {
+  &-total {
+    display: flex;
+    align-items: center;
+
     &-img {
-      width: 210px;
-      height: 210px;
+      width: 25%;
+      margin-right: 20px;
 
       img {
+        width: 215px;
+        height: 215px;
         border-radius: 50%;
-        height: 100%;
-        object-position: center;
-        object-fit: cover;
       }
     }
 
     @extend %quote;
+
+    .quote-content {
+      width: 75%;
+    }
   }
 }
 
@@ -922,12 +1007,12 @@ header {
       .client-name {
         text-transform: uppercase;
         @extend %montserrat-regular;
-        font-size: 14pt;
+        font-size: 14px;
       }
 
       .client-designation {
         @extend %roboto-italic;
-        font-size: 15pt;
+        font-size: 15px;
         color: $text-secondary;
       }
     }
@@ -938,6 +1023,7 @@ header {
       p {
         color: $text-secondary;
         @extend %roboto-regular;
+        font-size: 14px;
       }
     }
   }
@@ -990,13 +1076,13 @@ header {
         @extend %color-white;
 
         .blog-day {
-          font-size: 30pt;
+          font-size: 30px;
           @extend %montserrat-bold;
           margin-bottom: 0;
         }
 
         .blog-month {
-          font-size: 15pt;
+          font-size: 15px;
           margin-bottom: 0;
           @extend %roboto-italic;
         }
@@ -1009,13 +1095,14 @@ header {
 
       .blog-title {
         @extend %montserrat-regular;
-        font-size: 14pt;
+        font-size: 14px;
         margin: 10px 0;
       }
 
       .blog-content {
         @extend %roboto-regular;
         color: $text-secondary;
+        font-size: 14px;
       }
 
 
@@ -1033,13 +1120,13 @@ header {
         p {
           margin-bottom: 0;
           @extend %roboto-italic;
-          font-size: 15pt;
+          font-size: 15px;
           color: $text-secondary;
           padding-left: 5px;
         }
 
         i {
-          font-size: 15pt;
+          font-size: 15px;
           color: $color-skyblue;
         }
       }
@@ -1070,12 +1157,13 @@ header {
     .single-line {
       @extend %single-line-common;
       background-color: $color-tomato;
+      margin-top: 10px;
       margin-bottom: 0;
     }
 
     .map-icon {
       i {
-        font-size: 24pt;
+        font-size: 24px;
       }
     }
 
@@ -1083,7 +1171,8 @@ header {
       h4 {
         @extend %montserrat-bold;
         text-transform: uppercase;
-        font-size: 24pt;
+        font-size: 24px;
+        margin: 5px 0;
       }
     }
   }
@@ -1117,18 +1206,17 @@ footer {
   .footer-logo {
     h3 {
       @extend %montserrat-bold;
-      color: $text-secondary;
-      font-size: 46pt;
+      color: #ccc;
+      font-size: 46px;
       margin-bottom: 0;
     }
   }
 
   .footer-item {
 
-
     .footer-paragraph {
       @extend %roboto-regular;
-      font-size: 15pt;
+      font-size: 15px;
       line-height: 20px;
       color: $text-secondary;
     }
@@ -1136,13 +1224,13 @@ footer {
     .footer-follower {
       b {
         @extend %montserrat-bold;
-        font-size: 18pt;
+        font-size: 18px;
         color: $text-primary;
       }
 
       @extend %montserrat-regular;
       color: $text-primary;
-      font-size: 15pt;
+      font-size: 15px;
     }
   }
 
@@ -1155,18 +1243,18 @@ footer {
       align-items: center;
 
       li {
+        padding: 0 7px;
+
         p {
           @extend %roboto-italic;
-          font-size: 15pt;
+          font-size: 15px;
           color: $text-secondary;
           margin-bottom: 0;
         }
 
-        padding: 0 5px;
-
         a {
           i {
-            font-size: 15pt;
+            font-size: 15px;
             color: $color-skyblue;
           }
         }
@@ -1182,7 +1270,8 @@ footer {
     input {
       border: 1px solid #e5e5e5;
       height: 40px;
-      font-size: 15pt;
+      width: 225px;
+      font-size: 15px;
       padding: 0 10px;
       border-right: none;
 
@@ -1197,20 +1286,21 @@ footer {
       border: 1px solid $color-skyblue;
       @extend %color-white;
       @extend %montserrat-bold;
-      font-size: 14pt;
+      font-size: 14px;
       width: 150px;
       border-radius: 0;
       height: 40px;
+      text-transform: capitalize;
     }
   }
 
   .footer-title {
-    margin-bottom: 45px;
+    margin: 10px 0 45px 0;
 
     h4 {
-      @extend %montserrat-regular;
+      @extend %montserrat-bold;
       color: $text-primary;
-      font: 14pt;
+      font-size: 14px;
       text-transform: uppercase;
     }
   }
@@ -1218,7 +1308,6 @@ footer {
   .footer-content {
     .footer-single-blog {
       display: flex;
-      align-items: center;
       margin-bottom: 40px;
 
       .footer-blog-img {
@@ -1234,18 +1323,21 @@ footer {
         display: flex;
         flex-flow: column;
         justify-content: center;
+        width: 100%;
+
+        height: 100%;
 
         .footer-blog-post {
           margin-bottom: 0;
           @extend %montserrat-regular;
-          font-size: 12pt;
+          font-size: 12px;
           line-height: 20px;
           text-transform: uppercase;
         }
 
         .blog-post-date {
           @extend %roboto-italic;
-          font-size: 13pt;
+          font-size: 13px;
           color: $text-secondary;
           margin-bottom: 0;
         }
@@ -1278,7 +1370,7 @@ footer {
     a {
       @extend %roboto-italic;
       color: $text-secondary;
-      font-size: 13pt;
+      font-size: 13px;
     }
   }
 
@@ -1288,7 +1380,7 @@ footer {
 
     p {
       @extend %montserrat-regular;
-      font-size: 14pt;
+      font-size: 14px;
       margin-bottom: 0;
 
       span {

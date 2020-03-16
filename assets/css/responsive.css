@@ -45,10 +45,13 @@
   .about .about-img-hover p {
     font-size: 18px;
   }
-  .counter-area .counter {
+  .counter-area .counter-content {
+    border-style: none;
+  }
+  .counter-area .counter-content .counter {
     font-size: 50px;
   }
-  .counter-area .counter-text {
+  .counter-area .counter-content .counter-text {
     font-size: 14px;
   }
   .service-1 .services-1-content {
@@ -61,10 +64,17 @@
     margin: 10px auto;
   }
   .features .feature-mobile .big-screen {
-    width: 55%;
+    width: 250px;
+  }
+  .features .feature-mobile .big-screen img {
+    width: 100%;
+  }
+  .features .feature-mobile .big-screen .small-screen {
+    width: auto;
+    top: 55%;
   }
   .features .feature-mobile .big-screen .small-screen img {
-    width: 55%;
+    width: 100%;
   }
   .service-2 .services-2-content {
     margin-top: 0;
@@ -97,10 +107,6 @@
     margin: 0 10px 0 0;
     text-align: center;
   }
-  .quote .quote-total .quote-img img {
-    margin: 20px;
-    width: 35px;
-  }
   .quote .quote-content .quote-message {
     font-size: 14px;
   }
@@ -118,10 +124,19 @@
     font-size: 14px;
   }
   .masonary-container .masonary-content .normal-img-height {
-    height: auto;
+    height: 250px;
+  }
+  .masonary-container .masonary-content .normal-img-height img {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .masonary-container .masonary-content .double-img-height {
-    height: auto;
+    height: 250px;
+  }
+  .masonary-container .masonary-content .double-img-height img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    object-fit: cover;
   }
   .masonary-container .masonary-content .masonary-overlay img {
     width: 25px;
@@ -129,6 +144,28 @@
   }
   .sponsors {
     text-align: center;
+  }
+  .sponsors .single-sponsor {
+    margin-bottom: 20px;
+  }
+  .testimonial-total {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .testimonial-total-img {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+  }
+  .testimonial-total-img img {
+    width: 100%;
+    height: 100%;
   }
   .testimonial-item-img {
     width: 100px;
@@ -244,12 +281,18 @@
   }
   .home .home-btn .btn-mogo {
     font-size: 15px;
-    padding: 5px 20px;
+    padding: 0 20px;
   }
-  .counter-area .counter {
+  .about .about-content {
+    margin-bottom: 30px;
+  }
+  .counter-area .counter-content {
+    border-style: none;
+  }
+  .counter-area .counter-content .counter {
     font-size: 50px;
   }
-  .counter-area .counter-text {
+  .counter-area .counter-content .counter-text {
     font-size: 14px;
   }
   .service-1 .services-1-content {
@@ -261,11 +304,20 @@
   .service-1 .services-1-icon {
     margin: 10px auto;
   }
+  .section-paragraph p {
+    font-size: 14px;
+  }
   .features .feature-mobile .big-screen {
-    width: 55%;
+    width: 45%;
+  }
+  .features .feature-mobile .big-screen .small-screen {
+    width: auto;
   }
   .features .feature-mobile .big-screen .small-screen img {
-    width: 55%;
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .service-2 .services-2-content {
     margin-top: 20px;
@@ -284,20 +336,24 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
             flex-flow: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .quote .quote-total .quote-img {
     margin: 20px 0;
     text-align: center;
   }
-  .quote .quote-total .quote-img img {
-    margin: 20px;
-    width: 35px;
+  .quote .quote-content {
+    text-align: center;
   }
   .quote .quote-content .quote-message {
     font-size: 14px;
+  }
+  .quote .quote-content .quote-sign {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .quote .quote-content .quote-sign .quote-by {
     font-size: 25px;
@@ -306,20 +362,29 @@
     text-align: center;
   }
   .testimonial-item-img {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
   }
   .testimonial .quote-content .quote-message {
     font-size: 14px;
+  }
+  .testimonial .quote-content .quote-sign {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .testimonial .quote-content .quote-sign .quote-by {
     font-size: 25px;
   }
   .clients .single-client {
     padding: 0;
+    text-align: center;
+  }
+  .clients .single-client .single-line {
+    margin: 0 auto;
   }
   .clients .single-client .client-img {
-    margin-bottom: 10px;
+    margin: 10px auto;
   }
   .blog .single-blog-content .blog-date {
     top: 62%;
@@ -357,6 +422,9 @@
   footer .footer-item .footer-follower b {
     font-size: 18px;
   }
+  footer .footer-follow ul li {
+    padding: 0 5px;
+  }
   footer .footer-follow ul li p {
     font-size: 15px;
   }
@@ -364,11 +432,18 @@
     font-size: 15px;
   }
   footer .footer-subscribe input {
-    width: 60%;
-    font-size: 15px;
+    width: 100%;
   }
-  footer .footer-subscribe .btn-mogo {
-    font-size: 15px;
+  footer .footer-content .footer-single-blog .footer-blog-img {
+    width: 33%;
+  }
+  footer .footer-content .footer-single-blog .footer-blog-img img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  footer .footer-content .footer-single-blog .footer-blog-content {
+    width: 77%;
   }
   footer .footer-content .footer-single-blog .footer-blog-content .footer-blog-post {
     font-size: 12px;

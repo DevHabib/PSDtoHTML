@@ -1,9 +1,3 @@
-jQuery(document).ready(function ($) {
-
-});
-
-
-
 (function ($) {
   "use strict";
 
@@ -11,42 +5,63 @@ jQuery(document).ready(function ($) {
   jQuery(document).ready(function ($) {
     $(".counter").counterUp({});
 
-
-    $('.testimonial').owlCarousel({
-      margin: 0,
-      loop: true,
-      autoWidth: false,
-      items: 1,
-      nav: true,
-      dots: false,
-      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"]
-    })
-    $('.quote-carousel').owlCarousel({
-      margin: 0,
-      loop: true,
-      autoWidth: false,
-      items: 1,
-      nav: true,
-      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"]
-    })
   });
 
 
   jQuery(window).load(function () {
-    /* Sticky Header */
-    $(window).on('scroll', function () {
+    $(document).on('scroll', function () {
+
+      console.log('hi document');
       if ($(this).scrollTop() > 100) {
         $('header').addClass("sticky");
       } else {
         $('header').removeClass("sticky");
       }
+
     });
+
   });
 }(jQuery));
 
-var swiper = new Swiper('.swiper-container', {
+var mySwiper = new Swiper('.swiper-container', {
+  speed: 400,
+  spaceBetween: 100,
+  loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  fadeEffect: {
+    crossFade: false
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+    },
+  }
 });
+
+var swiper2 = new Swiper('.swiper-container2', {
+  speed: 400,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  freeMode: true,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  fadeEffect: {
+    crossFade: true
+  },
+
+})
