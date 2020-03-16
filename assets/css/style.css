@@ -221,33 +221,6 @@ header .navbar .navbar-nav .nav-item .nav-link:before, .home:before, .about .abo
           transform: rotate(0deg);
 }
 
-/*carousel*/
-.owl-nav {
-  width: 100%;
-}
-
-.owl-nav button {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  outline: none;
-}
-
-.owl-nav button i {
-  font-size: 23px;
-  color: #999;
-}
-
-.owl-nav .owl-prev {
-  position: absolute;
-  left: -5%;
-}
-
-.owl-nav .owl-next {
-  position: absolute;
-  right: -5%;
-}
-
 .normal-img-height {
   height: 390px;
 }
@@ -414,7 +387,7 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  padding: 100px 0;
 }
 
 .home:before {
@@ -537,7 +510,7 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
 
 .counter-area .counter-content {
   border-left: 1px solid #fff;
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 .counter-area .counter-content .counter {

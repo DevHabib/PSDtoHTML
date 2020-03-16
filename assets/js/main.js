@@ -27,27 +27,11 @@ var mySwiper = new Swiper('.swiper-container', {
   speed: 400,
   spaceBetween: 100,
   loop: true,
+  cssMode: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  fadeEffect: {
-    crossFade: false
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 1,
-      spaceBetween: 40,
-    },
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 50,
-    },
-  }
 });
 
 var swiper2 = new Swiper('.swiper-container2', {
@@ -56,12 +40,9 @@ var swiper2 = new Swiper('.swiper-container2', {
   slidesPerView: 1,
   freeMode: true,
   loop: true,
+  cssMode: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  fadeEffect: {
-    crossFade: true
-  },
-
 })
