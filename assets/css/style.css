@@ -616,6 +616,8 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
 }
 
 .service-2 .services-2-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
 }
 
