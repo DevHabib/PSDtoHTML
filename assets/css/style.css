@@ -1263,6 +1263,9 @@ footer .footer-content .footer-single-blog {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .footer-content .footer-single-blog .footer-blog-img img {

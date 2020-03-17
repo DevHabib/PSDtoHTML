@@ -308,6 +308,9 @@
   .section-heading .section-heading-main {
     font-size: 27px;
   }
+  .section-paragraph {
+    margin-bottom: 40px;
+  }
   .home .home-content .sub-heading {
     font-size: 35px;
   }
@@ -341,6 +344,9 @@
   }
   .section-paragraph p {
     font-size: 14px;
+  }
+  .masonary-container .masonary-content .masonary-img {
+    margin-bottom: 5px;
   }
   .features .feature-mobile .big-screen {
     width: 45%;
