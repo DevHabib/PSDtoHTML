@@ -391,7 +391,7 @@ header {
 
 /* home */
 .home {
-  background-image: url(../img/bg.jpg);
+  background-image: url('../img/bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -399,7 +399,7 @@ header {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding: 170px 0;
+  padding: 220px 0;
 
   &:before {
     @extend %absolute;
