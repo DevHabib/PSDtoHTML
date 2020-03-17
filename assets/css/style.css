@@ -83,7 +83,7 @@ button {
   font-family: "Kaushan Script";
 }
 
-header .navbar .navbar-brand, header .navbar .navbar-nav .nav-item .search-content .search-btn, header .navbar .navbar-nav .nav-item .nav-link, .home .home-content, .home .home-btn .btn-mogo, .about .about-content .about-img .about-img-hover i, .about .about-content .about-img .about-img-hover p, .counter-area .counter-content .counter, .counter-area .counter-content .counter-text, .team-member-overlay ul li a:hover i, .masonary-container .masonary-content .masonary-overlay, .blog .single-blog-content .blog-date, footer .footer-subscribe .btn-mogo {
+header .navbar .navbar-brand, header .navbar .navbar-nav .nav-item .search-content .search-btn, header .navbar .navbar-nav .nav-item .nav-link, .home .home-content, .home .home-btn .btn-mogo, .about .about-content .about-img .about-img-hover i, .about .about-content .about-img .about-img-hover p, .counter-area .counter-content .counter, .counter-area .counter-content .counter-text, .team-member-overlay ul li a:hover i, .masonary-container a .masonary-content .masonary-overlay, .blog .single-blog-content .blog-date, footer .footer-subscribe .btn-mogo {
   color: #fff;
 }
 
@@ -97,7 +97,7 @@ header .navbar .navbar-brand, header .navbar .navbar-nav .nav-item .search-conte
   font-weight: 800;
 }
 
-header .navbar .navbar-nav .nav-item .nav-link, .counter-area .counter-content .counter-text, .service-1 .services-1-details-title, .service-2-card .card-header .service-item-left span, .team-details-name, .masonary-container .masonary-content .masonary-overlay .masonary-center h5, .clients .single-client .client-details .client-name, .blog .single-blog .blog-content-top .blog-title, footer .footer-item .footer-follower, footer .footer-content .footer-single-blog .footer-blog-content .footer-blog-post, footer .copyright p {
+header .navbar .navbar-nav .nav-item .nav-link, .counter-area .counter-content .counter-text, .service-1 .services-1-details-title, .service-2-card .card-header .service-item-left span, .team-details-name, .masonary-container a .masonary-content .masonary-overlay .masonary-center h5, .clients .single-client .client-details .client-name, .blog .single-blog .blog-content-top .blog-title, footer .footer-item .footer-follower, footer .footer-content .footer-single-blog .footer-blog-content .footer-blog-post, footer .copyright p {
   font-family: "Montserrat";
   font-weight: 400;
 }
@@ -137,13 +137,13 @@ header .navbar .navbar-nav .nav-item .nav-link, .counter-area .counter-content .
   margin: 40px auto;
 }
 
-header .navbar .navbar-nav .nav-item .nav-link:before, .home:before, .about .about-content .about-img .about-img-hover :after, .features:before, .team-member-overlay:before, .masonary-container .masonary-content .masonary-overlay:before, .clients:before, .map:before {
+header .navbar .navbar-nav .nav-item .nav-link:before, .home:before, .about .about-content .about-img .about-img-hover :after, .features:before, .team-member-overlay:before, .masonary-container a .masonary-content .masonary-overlay:before, .clients:before, .map:before {
   position: absolute;
   content: '';
   width: 100%;
 }
 
-.about .about-content .about-img .about-img-hover :after, .home:before, .team-member-overlay:before, .masonary-container .masonary-content .masonary-overlay:before {
+.about .about-content .about-img .about-img-hover :after, .home:before, .team-member-overlay:before, .masonary-container a .masonary-content .masonary-overlay:before {
   background: #f38181;
   background: -webkit-gradient(linear, left top, left bottom, from(#f38181), color-stop(96%, #fce38a));
   background: linear-gradient(180deg, #f38181 0%, #fce38a 96%);
@@ -155,7 +155,7 @@ header .navbar .navbar-nav .nav-item .nav-link:before, .home:before, .about .abo
   opacity: 0.8;
 }
 
-.rotate, .sticky, header, header .navbar .navbar-nav .nav-item .search-content .search-btn, header .navbar .navbar-nav .nav-item .nav-link, header .navbar .navbar-nav .nav-item .nav-link:before, .about .about-content .about-img, .about .about-content .about-img .about-img-hover, .service-2-card .card-header .service-item-right i, .team-member, .team-member-overlay, .team-member-overlay ul li a i, .masonary-container .masonary-content .masonary-overlay {
+.rotate, .sticky, header, header .navbar .navbar-nav .nav-item .search-content .search-btn, header .navbar .navbar-nav .nav-item .nav-link, header .navbar .navbar-nav .nav-item .nav-link:before, .about .about-content .about-img, .about .about-content .about-img .about-img-hover, .service-2-card .card-header .service-item-right i, .team-member, .team-member-overlay, .team-member-overlay ul li a i, .masonary-container a .masonary-content .masonary-overlay {
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -828,26 +828,31 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
   width: 100%;
 }
 
-.masonary-container .masonary-content {
+.masonary-container a {
+  width: 100%;
+}
+
+.masonary-container a .masonary-content {
   position: relative;
 }
 
-.masonary-container .masonary-content:hover .masonary-overlay {
+.masonary-container a .masonary-content:hover .masonary-overlay {
   opacity: 1;
   visibility: visible;
 }
 
-.masonary-container .masonary-content .masonary-img {
+.masonary-container a .masonary-content .masonary-img {
   position: relative;
+  height: 350px;
 }
 
-.masonary-container .masonary-content .masonary-img img {
+.masonary-container a .masonary-content .masonary-img img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.masonary-container .masonary-content .masonary-overlay {
+.masonary-container a .masonary-content .masonary-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -859,13 +864,13 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
   line-height: 20px;
 }
 
-.masonary-container .masonary-content .masonary-overlay:before {
+.masonary-container a .masonary-content .masonary-overlay:before {
   height: 100%;
   z-index: -1;
   opacity: 0.9;
 }
 
-.masonary-container .masonary-content .masonary-overlay .masonary-center {
+.masonary-container a .masonary-content .masonary-overlay .masonary-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -882,13 +887,13 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
           align-items: center;
 }
 
-.masonary-container .masonary-content .masonary-overlay .masonary-center h5 {
+.masonary-container a .masonary-content .masonary-overlay .masonary-center h5 {
   text-transform: uppercase;
   font-size: 14px;
   margin: 20px 0;
 }
 
-.masonary-container .masonary-content .masonary-overlay .masonary-center img {
+.masonary-container a .masonary-content .masonary-overlay .masonary-center img {
   width: 30px;
   height: 30px;
 }
