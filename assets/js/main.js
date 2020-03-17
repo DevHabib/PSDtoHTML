@@ -5,6 +5,22 @@
   jQuery(document).ready(function ($) {
     $(".counter").counterUp({});
 
+    $('.masonary-container').magnificPopup({
+      gallery: {
+        enabled: true,
+      },
+      zoom: {
+        enabled: true,
+        duration: 300,
+        easing: 'ease-in-out',
+        opener: function (openerElement) {
+          return openerElement.is('img') ? openerElement : openerElement.find('img');
+        }
+      },
+      mainClass: 'mfp-with-zoom',
+      delegate: 'a',
+      type: 'image',
+    });
   });
 
 
@@ -25,13 +41,15 @@
 
 var mySwiper = new Swiper('.swiper-container', {
   speed: 400,
-  spaceBetween: 100,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  freeMode: true,
   loop: true,
   cssMode: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
+  }
 });
 
 var swiper2 = new Swiper('.swiper-container2', {
@@ -46,3 +64,5 @@ var swiper2 = new Swiper('.swiper-container2', {
     prevEl: '.swiper-button-prev',
   },
 })
+
+lightGallery(document.getElementById('lightgallery'))

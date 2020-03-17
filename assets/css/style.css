@@ -202,6 +202,23 @@ header .navbar .navbar-nav .nav-item .nav-link:before, .home:before, .about .abo
   margin: 0;
 }
 
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 0;
+  left: auto;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-left {
+  left: 0;
+  right: auto;
+}
+
+btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .rotate {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -387,7 +404,7 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 100px 0;
+  padding: 170px 0;
 }
 
 .home:before {

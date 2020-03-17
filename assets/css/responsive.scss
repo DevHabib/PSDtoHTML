@@ -4,10 +4,47 @@ $small : only screen and (max-width: 767px);
 
 /* lg Device :992px. 980px */
 @media #{$large} {
+
+
+  .double-img-height,
+  .normal-img-height {
+    height: auto;
+  }
+
   .home {
     .home-content {
       .main-heading {
-        font-size: 150px;
+        font-size: 120px;
+      }
+    }
+  }
+
+  .counter-area {
+    .counter-content-first {
+      border-style: none;
+    }
+
+    .counter-content-last {
+      border-right: none;
+    }
+  }
+
+  .features {
+    .feature-mobile {
+      .big-screen {
+        width: 350px;
+
+        .small-screen {
+          width: 190px;
+        }
+      }
+    }
+  }
+
+  .team-member {
+    .team-image {
+      img {
+        min-height: auto;
       }
     }
   }
@@ -34,6 +71,10 @@ $small : only screen and (max-width: 767px);
 @media #{$medium} {
   .md--none {
     display: none;
+  }
+
+  .masonary-flex {
+    display: flex;
   }
 
   header {
@@ -71,7 +112,7 @@ $small : only screen and (max-width: 767px);
       }
 
       .main-heading {
-        font-size: 50px;
+        font-size: 80px;
       }
 
 
@@ -98,6 +139,7 @@ $small : only screen and (max-width: 767px);
   .counter-area {
     .counter-content {
       border-style: none;
+      padding: 1rem 0;
 
       .counter {
         font-size: 50px;
@@ -432,6 +474,30 @@ $small : only screen and (max-width: 767px);
 
 /* Mobile Layout: 320px. 300px */
 @media #{$small} {
+
+  header {
+    background-color: #f38181;
+    top: 0;
+
+    nav {
+      .navbar-nav {
+        .nav-item {
+          .search-content {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .masonary-flex-off {
+    display: block;
+  }
+
+  .masonary-content-sm {
+    width: 100%;
+  }
+
   .map {
     .map-frame {
       .modal-content {
@@ -440,19 +506,7 @@ $small : only screen and (max-width: 767px);
     }
   }
 
-  header {
-    nav {
-      .navbar-nav {
-        .nav-item {
-          display: inherit;
-
-          .search-content {
-            width: 40px;
-          }
-        }
-      }
-    }
-  }
+  
 
   .section-heading {
     padding-bottom: 20px;
@@ -554,6 +608,17 @@ $small : only screen and (max-width: 767px);
     }
   }
 
+  .team {
+    .team-member {
+      .team-image {
+        img {
+          height: auto;
+          object-position: top center;
+        }
+      }
+    }
+  }
+
   .service-2 {
     .services-2-content {
       margin-top: 20px;
@@ -588,7 +653,15 @@ $small : only screen and (max-width: 767px);
       .quote-img {
         margin: 20px 0;
         text-align: center;
+        width: 85px;
+        height: 85px;
+        line-height: 85px;
 
+        img {
+          width: 40px;
+          margin: 0;
+
+        }
       }
     }
 

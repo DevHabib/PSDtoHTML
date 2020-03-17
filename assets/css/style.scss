@@ -89,6 +89,7 @@ $color-white: #fff;
 $text-primary: #333;
 $text-secondary: #999;
 
+
 %kaushan {
   font-family: "Kaushan Script";
 }
@@ -197,6 +198,22 @@ $text-secondary: #999;
   }
 }
 
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 0;
+  left: auto;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-left {
+  left: 0;
+  right: auto;
+}
+
+btn:focus {
+  box-shadow: none;
+}
+
 .rotate {
   transform: rotate(180deg);
   @extend %transition;
@@ -253,7 +270,6 @@ header {
 
     .navbar-brand {
       font-size: 2em;
-
       @extend %color-white;
       @extend %montserrat-bold;
     }
@@ -383,7 +399,7 @@ header {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding: 100px 0;
+  padding: 170px 0;
 
   &:before {
     @extend %absolute;

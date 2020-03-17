@@ -1,7 +1,26 @@
 /* lg Device :992px. 980px */
 @media (max-width: 1200px) {
+  .double-img-height,
+  .normal-img-height {
+    height: auto;
+  }
   .home .home-content .main-heading {
-    font-size: 150px;
+    font-size: 120px;
+  }
+  .counter-area .counter-content-first {
+    border-style: none;
+  }
+  .counter-area .counter-content-last {
+    border-right: none;
+  }
+  .features .feature-mobile .big-screen {
+    width: 350px;
+  }
+  .features .feature-mobile .big-screen .small-screen {
+    width: 190px;
+  }
+  .team-member .team-image img {
+    min-height: auto;
   }
   .testimonial-total-img {
     width: 33%;
@@ -15,6 +34,11 @@
 @media (max-width: 991px) {
   .md--none {
     display: none;
+  }
+  .masonary-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   header .navbar .navbar-nav .nav-item .nav-link {
     display: inline-block;
@@ -35,7 +59,7 @@
     font-size: 35px;
   }
   .home .home-content .main-heading {
-    font-size: 50px;
+    font-size: 80px;
   }
   .home .home-btn .btn-mogo {
     font-size: 15px;
@@ -46,6 +70,7 @@
   }
   .counter-area .counter-content {
     border-style: none;
+    padding: 1rem 0;
   }
   .counter-area .counter-content .counter {
     font-size: 50px;
@@ -252,14 +277,21 @@
 
 /* Mobile Layout: 320px. 300px */
 @media (max-width: 767px) {
-  .map .map-frame .modal-content {
-    height: auto !important;
-  }
-  header nav .navbar-nav .nav-item {
-    display: inherit;
+  header {
+    background-color: #f38181;
+    top: 0;
   }
   header nav .navbar-nav .nav-item .search-content {
-    width: 40px;
+    width: 100%;
+  }
+  .masonary-flex-off {
+    display: block;
+  }
+  .masonary-content-sm {
+    width: 100%;
+  }
+  .map .map-frame .modal-content {
+    height: auto !important;
   }
   .section-heading {
     padding-bottom: 20px;
@@ -319,6 +351,11 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
+  .team .team-member .team-image img {
+    height: auto;
+    -o-object-position: top center;
+       object-position: top center;
+  }
   .service-2 .services-2-content {
     margin-top: 20px;
   }
@@ -343,6 +380,13 @@
   .quote .quote-total .quote-img {
     margin: 20px 0;
     text-align: center;
+    width: 85px;
+    height: 85px;
+    line-height: 85px;
+  }
+  .quote .quote-total .quote-img img {
+    width: 40px;
+    margin: 0;
   }
   .quote .quote-content {
     text-align: center;
