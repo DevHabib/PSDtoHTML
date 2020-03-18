@@ -843,7 +843,6 @@ header .navbar .navbar-nav .nav-item .nav-link:hover::before {
 
 .masonary-container a .masonary-content .masonary-img {
   position: relative;
-  height: 350px;
 }
 
 .masonary-container a .masonary-content .masonary-img img {

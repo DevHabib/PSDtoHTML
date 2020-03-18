@@ -1,9 +1,5 @@
 /* lg Device :992px. 980px */
 @media (max-width: 1200px) {
-  .double-img-height,
-  .normal-img-height {
-    height: auto;
-  }
   .home .home-content .main-heading {
     font-size: 120px;
   }
@@ -27,6 +23,9 @@
   }
   .testimonial-total .quote-content .quote-message .quote-sign {
     width: 77%;
+  }
+  .works .masonary-container a .masonary-content .masonary-img {
+    height: auto;
   }
 }
 
@@ -103,6 +102,10 @@
   .features .feature-mobile .big-screen .small-screen img {
     width: 100%;
   }
+  .works .masonary-container a .masonary-content .masonary-img {
+    margin-bottom: 0 !important;
+    height: 350px;
+  }
   .service-2 .services-2-img {
     height: auto;
   }
@@ -152,25 +155,6 @@
   }
   .team .team-details-designation {
     font-size: 14px;
-  }
-  .masonary-container .masonary-content .normal-img-height {
-    height: 250px;
-  }
-  .masonary-container .masonary-content .normal-img-height img {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .masonary-container .masonary-content .double-img-height {
-    height: 250px;
-  }
-  .masonary-container .masonary-content .double-img-height img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    object-fit: cover;
-  }
-  .masonary-container .masonary-content .masonary-overlay img {
-    width: 25px;
-    height: 25px;
   }
   .sponsors {
     text-align: center;
@@ -345,8 +329,8 @@
   .section-paragraph p {
     font-size: 14px;
   }
-  .masonary-container .masonary-content .masonary-img {
-    margin-bottom: 5px;
+  .works .masonary-container a .masonary-content .masonary-img {
+    margin-bottom: 5px !important;
   }
   .features .feature-mobile .big-screen {
     width: 45%;
